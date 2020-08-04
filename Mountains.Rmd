@@ -1,0 +1,26 @@
+---
+title: "Leaflet"
+author: "Janhavi"
+date: "August 3rd 2020"
+output: pdf_document
+---
+library(knitr)
+library(leaflet)
+library(dplyr)
+
+##highest mountains in Switzerland 
+mountains <- leaflet() %>%
+addTiles() %>%
+addMarkers(lat = 46.8182, lng = 8.2275, popup= "Switzerland") %>%
+addMarkers(lat = 45.9370, lng = 7.8676, popup= "1. Monte Rosa, 4,634 m") %>%
+addMarkers(lat = 46.0939, lng = 7.8589, popup= "2. Dom, 4,545 m") %>%
+addMarkers(lat = 45.9233, lng = 7.8336, popup= "3. Lyskamm, 4,527 m") %>%
+addMarkers(lat = 46.1013, lng = 7.7162, popup= "4. Weisshorn, 4,506 m") %>%
+addMarkers(lat = 45.9766, lng = 7.6585, popup= "5. Matterhorn, 4,478 m") %>%
+addMarkers(lat = 46.0349, lng = 7.6119, popup= "6. Dent Blanche, 4,357 m") %>%
+addMarkers(lat = 45.9369, lng = 7.2989, popup= "7. Grand Combin, 4,314 m") %>%
+addMarkers(lat = 46.5371, lng = 8.1264, popup= "8. Finsteraarhorn, 4,274 m") %>%
+addMarkers(lat = 46.0636, lng = 7.6900, popup= "9. Zinalrothorn, 4,221 m") %>%
+addMarkers(lat = 46.0620,lng = 7.8642, popup= "10. Alphubel, 4,206 m")
+print("These are the highest mountains in Switzerland")
+print (mountains)
