@@ -1,0 +1,103 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Leaflet},
+  pdfauthor={Janhavi},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\title{Leaflet}
+\author{Janhavi}
+\date{August 3rd 2020}
+
+\begin{document}
+\maketitle
+
+library(knitr) library(leaflet) library(dplyr)
+
+\#\#wonders \textless- leaflet() \%\textgreater\% \#\#addTiles()
+\%\textgreater\% \#\#addMarkers(lat = 40.4319, lng = 116.5704, popup=
+``Great Wall Of China, Huairou District,China'') \%\textgreater\%
+\#\#addMarkers(lat = 22.9519, lng = 43.2105, popup= ``Christ the
+Redeemer, Rio de Janeiro,Brazil'') \%\textgreater\% \#\#addMarkers(lat =
+13.1631, lng = 72.5450, popup= ``Machu Picchu,Andes Mountains, Peru'')
+\%\textgreater\% \#\#addMarker(lat = 20.6843, lng = 88.5678, popup=
+``Chichén Itzá, Yucatan, Mexico'') \%\textgreater\% \#\#addMarker(lat =
+41.8902, lng = 12.4922, popup= ``Colosseum, Roma, Italy'')
+\%\textgreater\% \#\#addMarker(lat = 27.1751, lng = 78.0421, popup=
+``Taj Mahal, Agra, India'') \%\textgreater\% \#\#addMarker(lat =
+30.3285, lng = 35.4444, popup= ``Jordan'') \#\#print(wonders)
+
+mountains \textless- leaflet() \%\textgreater\% addTiles(lat = 46.8182,
+lng = 8.2275, popup= ``Switzerland'') \%\textgreater\%
+\#\#addMarkers(lat = 46.8182, lng = 8.2275, popup= ``Switzerland'')
+\%\textgreater\% addMarkers(lat = 45.9370, lng = 7.8676, popup= ``Monte
+Rosa, 4,634 m'') \%\textgreater\% addMarkers(lat = 46.0939, lng =
+7.8589, popup= ``Dom, 4,545 m'') \%\textgreater\% addMarker(lat =
+45.9233, lng = 7.8336, popup= ``Lyskamm, 4,527 m'') \%\textgreater\%
+addMarker(lat = 46.1013, lng = 7.7162, popup= ``Weisshorn, 4,506 m'')
+\%\textgreater\% addMarker(lat = 45.9766, lng = 7.6585, popup=
+``Matterhorn, 4,478 m'') \%\textgreater\% addMarker(lat = 46.0349, lng =
+7.6119, popup= ``Dent Blanche, 4,357 m'') \%\textgreater\% addMarker(lat
+= 45.9369, lng = 7.2989, popup= ``Grand Combin, 4,314 m)
+\%\textgreater\% addMarker(lat = 46.5371, lng = 8.1264,
+popup=''Finsteraarhorn, 4,274 m) \%\textgreater\% addMarker(lat =
+46.0636, lng = 7.6900, popup= ``Zinalrothorn, 4,221 m) \%\textgreater\%
+addMarker(lat = 46.0620°, lng = 7.8642, popup=''Alphubel, 4,206 m)
+print(mountains)
+
+\end{document}
